@@ -57,6 +57,17 @@ Page({
       })
     })
   },
+  // url跳转不了,少了个 index
+  toGoodsList(e) {
+    let { src } = e.currentTarget.dataset;
+    // /pages/goods_list/index?query=爆款
+    // /pages/goods_list/index?cid=5
+    src = src.replace(/goods_list/, "goods_list/index")
+    console.log(src);
+    wx.navigateTo({
+      url: src,
+    })
+  }
 
 
 })
